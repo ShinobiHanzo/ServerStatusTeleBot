@@ -3,8 +3,7 @@ setup the server's settings before continuing the service:
 start by preparing the required libraries:
 
 // in linux terminal
-sudo apt-get install python3-pip
-sudo pip3 install -r requirements.txt
+sudo apt-get install python3-pip && sudo pip3 install -r requirements.txt
 
 
 
@@ -19,8 +18,7 @@ BOT_USERNAME = '<BOT_USERNAME_HERE>'
 After updating the settings in "data.py", add the files to system's control:
 
 // in linux terminal
-sudo systemctl enable notify
-sudo systemctl start notify
+sudo systemctl enable notify && sudo systemctl start notify
 
 
 Make sure you're in the local directory before starting any of the process
