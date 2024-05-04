@@ -17,7 +17,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("this is a custom command")
 
-async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def reboot_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Rebooting...")
     try:
         subprocess.run(["sudo", "reboot"])
@@ -100,6 +100,7 @@ if __name__ =='__main__':
     # Commands
     app.add_handler(CommandHandler('start',start_command))
     app.add_handler(CommandHandler('help',help_command))
+    app.add_handler(CommandHandler('help',custom_command))
     app.add_handler(CommandHandler('reboot',reboot_command))
 
 
