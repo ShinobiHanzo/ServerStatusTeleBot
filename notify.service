@@ -1,0 +1,10 @@
+[Unit]
+Description=Notification Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 ./main.py
+
+[Install]
+WantedBy=multi-user.target

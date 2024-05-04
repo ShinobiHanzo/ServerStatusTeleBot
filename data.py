@@ -1,0 +1,3 @@
+TOKEN = ''
+CHAT_ID = ''
+BOT_USERNAME = ''
