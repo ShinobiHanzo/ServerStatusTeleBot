@@ -1,31 +1,7 @@
 #!/bin/bash
 
-# Function to validate Telegram bot token
-validate_token() {
-    local token_length=${#1}
-    local token_regex="^[0-9]{8}:[a-zA-Z0-9]{32}$"
-    if [[ $1 =~ $token_regex ]]; then
-        echo "Valid token."
-        return 0
-    else
-        echo "Error: Token must be in the format ########:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        return 1
-    fi
-}
-
-# Prompt user for Telegram bot token
-read -p "Enter your Telegram bot token in the format ########:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: " BOT_TOKEN
-
-# Validate the token format
-while ! validate_token "$BOT_TOKEN"; do
-    read -p "Enter your Telegram bot token in the format ########:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: " BOT_TOKEN
-done
-
 # Replace with the path to your Python script
 PYTHON_SCRIPT="./notify.py"
-
-# Replace with your Telegram chat ID
-CHAT_ID="YOUR_CHAT_ID"
 
 # Complete the service file template with the provided parameters
 cat <<EOF > ssh_login_notifier.service
